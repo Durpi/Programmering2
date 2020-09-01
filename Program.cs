@@ -7,23 +7,29 @@ namespace Programmering2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            Random generator = new Random();
+
+            // Console.WriteLine("Hello World!");
 
             // File.WriteAllText("words.txt", "Thing");
 
             // string s = File.ReadAllText("words.txt");
 
-            // Console.WriteLine(s);
 
-            // string[] words = {"Hat", "Coat", "Pants"};
+            string[] words = {"Hat", "Coat", "Pants", "Dragon", "Computer"};
 
-            if (File.Exists("words.txt"))
-            {
-            string[] words = File.ReadAllLines("words.txt");
+            File.WriteAllLines("words.txt", words);
 
-            Console.WriteLine(words[0]);
+            // if (File.Exists("words.txt"))
+            // {
+            words = File.ReadAllLines("words.txt");
 
-            }            
+            int randomNumber = generator.Next(5);
+
+            Console.WriteLine(words[randomNumber]);
+
+            // }            
 
 
 
